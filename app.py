@@ -10,7 +10,8 @@ app = Flask(__name__, static_url_path='/static')
 @app.route('/')
 def main():
 	jobResponse = getJobs.getJobs("Google", 0)
-	return render_template('index.html', current = jobResponse['currentpage'])
+	return render_template('index.html', current = jobResponse['currentpage'], 
+		total = jobResponse['totalpages'], jobs = jobResponse['results'])
 
 @app.route('/static/<path:path>')
 def send_js(path):

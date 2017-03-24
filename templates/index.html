@@ -116,26 +116,24 @@ body {
                 </tr>
               </thead>
               <tbody id="tbod">
-                <!--{% for question in questions %}
+                {% for job in jobs %}
                 <tr>
-                  <td>{{question[0]}}</td>
-                  <td>{{question[1]}}</td>
-                  <td>{{question[3]}}</td>
-                  <td>{{question[4]}}</td>
-                  <td><button type="button" class="btn btn-primary">Push</button></td>
-                  <td><button type="button" class="btn btn-danger">Delete</button></td>
+                  <td>{{job['jobtitle']}}</td>
+                  <td>{{job['company']}}</td>
+                  <td>{{job['formattedLocation']}}</td>
                 </tr>
-                {% endfor %}-->
+                {% endfor %}
               </tbody>
             </table>
             <div class="pagination-container">
+              <nav>
               <ul class="pagination">
-                <li class="active"><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
+                {% for page in range(total) %}
+                <li><a href="#">{{page + 1}}</a></li>
+                {% endfor %}
+                <!--<li class="active"><a href="#">1</a></li>-->
               </ul>
+              </nav>
             </div>
           </div>
       <footer class="footer">
