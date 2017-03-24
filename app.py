@@ -9,13 +9,13 @@ app = Flask(__name__, static_url_path='/static')
 
 @app.route('/')
 def main():
-	jobResponse = getJobs.getJobs("Google", 0)
+	jobResponse = getJobs.getJobs("AirBnb", 0)
 	return render_template('index.html', current = jobResponse['currentpage'], 
 		total = jobResponse['totalpages'], jobs = jobResponse['results'])
 
 @app.route('/<int:page_no>')
 def page(page_no):
-	jobResponse = getJobs.getJobs("Google", page_no - 1)
+	jobResponse = getJobs.getJobs("AirBnb", page_no - 1)
 	return render_template('index.html', current = jobResponse['currentpage'], 
 		total = jobResponse['totalpages'], jobs = jobResponse['results'])
 
