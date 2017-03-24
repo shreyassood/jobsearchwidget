@@ -127,9 +127,9 @@ body {
             </table>
             <div class="pagination-container">
               <nav>
-              <ul class="pagination">
+              <ul class="pagination" max-size="10">
                 {% for page in range(total) %}
-                <li><a href="#">{{page + 1}}</a></li>
+                <li><a href="{{'/' + ((page + 1)|string)}}">{{page + 1}}</a></li>
                 {% endfor %}
                 <!--<li class="active"><a href="#">1</a></li>-->
               </ul>

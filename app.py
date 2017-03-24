@@ -13,6 +13,13 @@ def main():
 	return render_template('index.html', current = jobResponse['currentpage'], 
 		total = jobResponse['totalpages'], jobs = jobResponse['results'])
 
+@app.route('/<int:page_no>')
+def page(page_no):
+	jobResponse = getJobs.getJobs("Google", page_no - 1)
+	return render_template('index.html', current = jobResponse['currentpage'], 
+		total = jobResponse['totalpages'], jobs = jobResponse['results'])
+
+
 @app.route('/static/<path:path>')
 def send_js(path):
     return send_from_directory('static', path)
