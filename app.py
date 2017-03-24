@@ -2,13 +2,15 @@
 # -*- coding: utf-8 -*-
 
 from flask import Flask, request, render_template
-
+import getJobs
 
 app = Flask(__name__, static_url_path='/static')
 
+
 @app.route('/')
 def main():
-    return render_template('index.html')
+	jobResponse = getJobs.getJobs("Google", 0)
+	return render_template('index.html', current = jobResponse['currentpage'])
 
 @app.route('/static/<path:path>')
 def send_js(path):
