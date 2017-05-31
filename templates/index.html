@@ -118,7 +118,9 @@ body {
               <tbody id="tbod">
                 {% for job in jobs %}
                 <tr>
-                  <td>{{job['jobtitle']}}</td>
+                  <td>
+                    <a href="{{job['url']}}">{{job['jobtitle']}}</a>
+                  </td>
                   <td>{{job['company']}}</td>
                   <td>{{job['formattedLocation']}}</td>
                 </tr>
