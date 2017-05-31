@@ -2,10 +2,10 @@
 
 
 
-#Virtual Env Setup:
+Virtual Env Setup:
 	Python3, pip requirements in requirements.txt
 
-#Usage:
+Usage inside activated venv:
 	```
-	python3 app.py
+	python app.py
 	```
